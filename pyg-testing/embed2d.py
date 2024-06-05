@@ -9,6 +9,7 @@ unique_nodes = pd.concat([edges["from_id"], edges["to_id"]]).unique()
 node_to_index = {node_id: idx for idx, node_id in enumerate(unique_nodes)}
 edges["from_index"] = edges["from_id"].map(node_to_index)
 edges["to_index"] = edges["to_id"].map(node_to_index)
+edges = edges.drop(columns=['from_id', 'to_id'])
 edge_index = torch.tensor(
     [edges["from_index"].to_numpy(), edges["to_index"].to_numpy()], dtype=torch.long
 )

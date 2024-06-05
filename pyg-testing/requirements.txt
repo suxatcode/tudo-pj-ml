@@ -3,13 +3,12 @@ black
 pytest
 matplotlib
 jupyter
+ipython
 
 # data handling
 sqlalchemy
 pandas
 numpy
-ipython
-jupyter
 psycopg2-binary
 
 # DNN & GCN
